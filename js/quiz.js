@@ -1,5 +1,6 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
+const categoria = document.getElementById("categoria");
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -189,6 +190,7 @@ let questions = [
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
+    categoria.innerText = currentQuestion.categoria;
 
  };
 

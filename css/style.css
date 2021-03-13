@@ -150,19 +150,19 @@ main {
 }
 
 #question {
-  color: rgb( 101, 189, 225 );
+  color: white;
   font-size: 1.8rem;
   padding: 1rem;
 }
 
 #categoria {
-  color: rgb(121, 200, 232);
+  color: #05b7ff;
   font-size: 2.2rem;
   padding: 1rem;
 }
 
 #competencia{
-  color: white;
+  color:  #184656 ;
   font-size: 3rem;
   padding: 1rem;
   text-align: center;

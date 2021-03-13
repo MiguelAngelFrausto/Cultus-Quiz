@@ -3,12 +3,13 @@ const choices = Array.from(document.getElementsByClassName("choice-text"));
 const categoria = document.getElementById("categoria");
 
 let currentQuestion = {};
-let acceptingAnswers = true;
+let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let answerClient;
 
+// Arreglo almacendado las preguntas y respuestas
 let questions = [
 
     {
@@ -183,7 +184,7 @@ let questions = [
     getNewQuestions();
  };
 
- 
+ // Mostrar las respuestas
  getNewQuestions = () => {
 
     questionCounter++;
@@ -192,7 +193,33 @@ let questions = [
     question.innerText = currentQuestion.question;
     categoria.innerText = currentQuestion.categoria;
 
+    choices.forEach( choice => {
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
+    });
+
+    availableQuestions.splice(questionIndex, 1);
+
+    acceptingAnswers = true;
+
  };
+
+// Selecion de respuesta
+
+ choices.forEach( choice => {
+    choice.addEventListener("click", e => {
+
+        if (!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
+        
+        console.log(selectedAnswer);
+        getNewQuestions();
+
+    });
+ });
 
  startGame();
 

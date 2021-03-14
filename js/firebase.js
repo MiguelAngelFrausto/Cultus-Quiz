@@ -1,17 +1,19 @@
 //obtener elementos
-const txtEmail = document.getElementById("email");
-const password = document.getElementById("password");
-const btnSignUp = document.getElementById("signUp");
 
-btnSignUp.addEventListener('click', e => {
+const btnSignUp = document.querySelector("#formulario__register");
 
-const email = txtEmail.value;
-const pass = password.value;
-const auth = firebase.auth();
+btnSignUp.addEventListener('submit', (e) => {
 
-const promise = auth.createUserWithEmailAndPassword(email, pass);
-promise.catch(e => console.log(e.message));
-print("Entraste");
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+    e.preventDefault();
+
+    console.log(email, password);
+
+    auth.createUserWithEmailAndPassword(email, password).then(userCredential =>{
+        console.log('Registrado!');
+    });
+
 });
 
 

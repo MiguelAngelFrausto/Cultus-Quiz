@@ -6,6 +6,7 @@ let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
+let i=0;
 let availableQuestions = [];
 let answerClient;
 
@@ -61,18 +62,6 @@ let questions = [
         choice4: "Bueno",
         choice5: "Sobresaliente",
         answer: 2
-        
-    },
-
-    {
-        categoria: "Producto/Servicio",
-        question: "¿Cómo calificas la calidad de tu producto o servicio en comparación con tu competencia?",
-        choice1: "Muy mal",
-        choice2: "Mal",
-        choice3: "Aceptable",
-        choice4: "Bueno",
-        choice5: "Sobresaliente",
-        answer: 3
         
     },
 
@@ -174,10 +163,11 @@ let questions = [
 ];
 
  // Constantes
-
+ const MAX_QUESTIONS = 12;   
  startGame = () => {
 
     questionCounter = 0;
+    i = 0;
     score = 0;
     availableQuestions = questions;
     console.log(availableQuestions);
@@ -186,9 +176,14 @@ let questions = [
 
  // Mostrar las respuestas
  getNewQuestions = () => {
+    /*
+    if (availableQuestions.length == 0 || questionCounter > MAX_QUESTIONS){
 
+        
+    }
+*/
     questionCounter++;
-    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    const questionIndex = Math.floor(Math.random() / availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
     categoria.innerText = currentQuestion.categoria;

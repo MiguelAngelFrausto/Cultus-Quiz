@@ -353,7 +353,7 @@ let questions = [
         
     },
    
-    // Competencia 2
+    // Competencia 2 deberia estar 
     {
        
         competencia: "Competencia 2",

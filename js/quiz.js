@@ -2,6 +2,7 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const categoria = document.getElementById("categoria");
 const competencia = document.getElementById("competencia");
+const questionCounterText= document.getElementById("questionCounter");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -353,7 +354,7 @@ let questions = [
         
     },
    
-    // Competencia 2 deberia estar 
+    // Competencia 2 deberia estar
     {
        
         competencia: "Competencia 2",
@@ -546,6 +547,7 @@ let questions = [
     }
 
     questionCounter++;
+    questionCounterText.innerText = `${questionCounter} / ${MAX_QUESTIONS}`;
     const questionIndex = Math.floor(Math.random() / availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;

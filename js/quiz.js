@@ -538,7 +538,7 @@ let questions = [
     getNewQuestions();
  };
 
- // Mostrar las respuestas
+ // Mostrar las respuestas s
  getNewQuestions = () => {
     
     if (availableQuestions.length == 0 || questionCounter > MAX_QUESTIONS){

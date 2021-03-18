@@ -83,6 +83,12 @@ function register(){
 
 }
 
+const correo = document.querySelector("#email").value;
+function validarEmail( correo ) {
+    expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if ( !expr.test(correo) )
+        alert("Error: La dirección de correo " + email + " es incorrecta.");
+}
 
 ///firebase auth login 
 btnSignUp.addEventListener('submit', (e) => {
@@ -91,11 +97,16 @@ btnSignUp.addEventListener('submit', (e) => {
     const correo = document.querySelector("#email").value;
     const contrasena = document.querySelector("#password").value;
     e.preventDefault();
+    validarEmail(correo);
 
    // console.log(correo, contrasena);
 
     auth.createUserWithEmailAndPassword(correo, contrasena).then(userCredential =>{
        // console.log('Registrado!');
+       var re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+
+       if (!re.exec(correo))
+           alert('Correo no valido');
         
         var uID = firebase.auth().currentUser;
 

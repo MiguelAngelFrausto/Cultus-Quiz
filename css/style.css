@@ -211,6 +211,54 @@ main {
   padding: 1.2rem;
 }
 
+/* Competencias */
+
+.contenedor-comp{
+
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  width: 100%;
+  border-radius: 20px;
+  background-color: rgba(24, 70, 86, 0.2);
+
+}
+
+#p-comp{
+
+  font-size: 3.5rem;
+  color: #05b7ff;
+  text-align: center;
+
+}
+
+.contenedor-comp form input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background: #e3e1e1;
+  font-size: 16px;
+  outline: none;
+}
+
+.form-comp{
+
+  align-items: center;
+
+}
+
+.contenedor-comp form button {
+  padding: 10px 40px;
+  margin-top: 40px;
+  border: none;
+  font-size: 14px;
+  background: rgba(24, 70, 86);
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
 
 /* Responsive design */
 
